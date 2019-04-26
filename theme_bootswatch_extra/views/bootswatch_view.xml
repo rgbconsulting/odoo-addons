@@ -1,0 +1,121 @@
+<odoo>
+    <template id="theme_customize" inherit_id="theme_bootswatch.theme_customize"
+              name="theme_customize Bootswatch">
+        name="Themes Extra">
+        <xpath expr="(//div[@class='modal-body']/table)[last()]"
+               position="inside">
+            <tr>
+                <td>
+                    <label>
+                        <img style="width: 120px; height: 70px;"
+                             src="/theme_bootswatch_extra/static/src/img/bootswatch/darkly_thumbnail.png"
+                             alt="Darkly"/>
+                        <input name="theme" type="radio"
+                               data-xmlid="theme_bootswatch_extra.theme_darkly"/>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <img style="width: 120px; height: 70px;"
+                             src="/theme_bootswatch_extra/static/src/img/bootswatch/lumen_thumbnail.png"
+                             alt="Lumen"/>
+                        <input name="theme" type="radio"
+                               data-xmlid="theme_bootswatch_extra.theme_lumen"/>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <img style="width: 120px; height: 70px;"
+                             src="/theme_bootswatch_extra/static/src/img/bootswatch/paper_thumbnail.png"
+                             alt="Paper"/>
+                        <input name="theme" type="radio"
+                               data-xmlid="theme_bootswatch_extra.theme_paper"/>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label>
+                        <img style="width: 120px; height: 70px;"
+                             src="/theme_bootswatch_extra/static/src/img/bootswatch/sandstone_thumbnail.png"
+                             alt="Sandstone"/>
+                        <input name="theme" type="radio"
+                               data-xmlid="theme_bootswatch_extra.theme_sandstone"/>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <img style="width: 120px; height: 70px;"
+                             src="/theme_bootswatch_extra/static/src/img/bootswatch/superhero_thumbnail.png"
+                             alt="Superhero"/>
+                        <input name="theme" type="radio"
+                               data-xmlid="theme_bootswatch_extra.theme_superhero"/>
+                    </label>
+                </td>
+                <td>
+                    <label>
+                        <img style="width: 120px; height: 70px;"
+                             src="/theme_bootswatch_extra/static/src/img/bootswatch/yeti_thumbnail.png"
+                             alt="Yeti"/>
+                        <input name="theme" type="radio"
+                               data-xmlid="theme_bootswatch_extra.theme_yeti"/>
+                    </label>
+                </td>
+            </tr>
+        </xpath>
+    </template>
+    <template id="theme_bootswatch_extra.theme_darkly" name="Darkly"
+              inherit_id="website.assets_frontend"
+              active="False" customize_show="False">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet"
+                  href="/theme_bootswatch_extra/static/src/css/bootswatch-darkly.min.css"
+                  t-ignore="true"/>
+        </xpath>
+    </template>
+    <template id="theme_bootswatch_extra.theme_lumen" name="Lumen"
+              inherit_id="website.assets_frontend"
+              active="False" customize_show="False">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet"
+                  href="/theme_bootswatch_extra/static/src/css/bootswatch-lumen.min.css"
+                  t-ignore="true"/>
+        </xpath>
+    </template>
+    <template id="theme_bootswatch_extra.theme_paper" name="Paper"
+              inherit_id="website.assets_frontend"
+              active="False" customize_show="False">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet"
+                  href="/theme_bootswatch_extra/static/src/css/bootswatch-paper.min.css"
+                  t-ignore="true"/>
+        </xpath>
+    </template>
+    <template id="theme_bootswatch_extra.theme_sandstone" name="Sandstone"
+              inherit_id="website.assets_frontend"
+              active="False" customize_show="False">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet"
+                  href="/theme_bootswatch_extra/static/src/css/bootswatch-sandstone.min.css"
+                  t-ignore="true"/>
+        </xpath>
+    </template>
+    <template id="theme_bootswatch_extra.theme_superhero" name="Superhero"
+              inherit_id="website.assets_frontend"
+              active="False" customize_show="False">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet"
+                  href="/theme_bootswatch_extra/static/src/css/bootswatch-superhero.min.css"
+                  t-ignore="true"/>
+        </xpath>
+    </template>
+    <template id="theme_bootswatch_extra.theme_yeti" name="Yeti"
+              inherit_id="website.assets_frontend"
+              active="False" customize_show="False">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet"
+                  href="/theme_bootswatch_extra/static/src/css/bootswatch-yeti.min.css"
+                  t-ignore="true"/>
+        </xpath>
+    </template>
+</odoo>

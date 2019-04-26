@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Base label template menu -->
+    <menuitem id="account_template_config_label" name="Templates" parent="account.menu_finance_configuration"
+              groups="account.group_account_manager" sequence="30"/>
+    <!-- Chart templates -->
+    <menuitem action="account.action_account_chart_template_form" id="account_chart_template_menu" name="COA Templates"
+              parent="account_template_config_label" sequence="1"/>
+    <!-- Account templates -->
+    <menuitem action="account.action_account_template_form" id="account_template_menu" name="Account Templates"
+              parent="account_template_config_label" sequence="5"/>
+    <!-- Tax templates -->
+    <menuitem action="account.action_account_tax_template_form" id="account_tax_template_menu" name="Tax Templates"
+              parent="account_template_config_label" sequence="10"/>
+    <!-- Fiscal Position templates -->
+    <menuitem action="account.action_account_fiscal_position_template_form" id="account_fiscal_position_template_menu"
+              name="Fiscal Position Templates" parent="account_template_config_label" sequence="15"/>
+</odoo>

@@ -1,0 +1,12 @@
+<odoo>
+    <record id="partner_vat_disable_form_view" model="ir.ui.view">
+        <field name="name">res.partner.vat.disable.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base_vat.view_partner_form"/>
+        <field name="arch" type="xml">
+            <div name="vat_info" position="after">
+                <field name="vat_validation_fail"/>
+            </div>
+        </field>
+    </record>
+</odoo>
