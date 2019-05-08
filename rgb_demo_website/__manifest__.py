@@ -6,7 +6,7 @@
     'summary': 'Default addons for demo website',
     'version': '12.0.0.1.0',
     'category': 'RGB',
-    'website': "http://www.rgbconsulting.com",
+    'website': "https://www.rgbconsulting.com",
     'author': "RGB Consulting SL",
     'license': 'AGPL-3',
     'depends': ['rgb_demo',

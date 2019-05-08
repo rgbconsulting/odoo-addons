@@ -5,7 +5,7 @@
     'name': 'RGB Base Setup',
     'summary': 'Default base modules',
     'category': 'RGB',
-    'website': "http://www.rgbconsulting.com",
+    'website': "https://www.rgbconsulting.com",
     'author': "RGB Consulting SL",
     'license': 'AGPL-3',
     'version': '12.0.1.0.0',
