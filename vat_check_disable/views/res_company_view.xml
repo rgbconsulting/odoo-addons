@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="company_form_vat_disable" model="ir.ui.view">
+        <field name="name">res.company.form.vat.disable.inherit</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base_vat.company_form_vat"/>
+        <field name="arch" type="xml">
+            <field name="parent_id" position="after">
+                <field name="disable_vat_check"/>
+            </field>
+        </field>
+     </record>
+</odoo>
