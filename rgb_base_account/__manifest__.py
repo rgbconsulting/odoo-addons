@@ -18,7 +18,7 @@
                 # account-invoicing
                     'account_invoice_check_total',
                     'account_invoice_refund_link',
-                    #[PR]'account_invoice_tax_required',
+                    'account_invoice_tax_required',
                     #[PR]'account_invoice_supplier_ref_unique',
                     'account_invoice_fiscal_position_update',
                     'account_payment_term_extension',
