@@ -8,7 +8,7 @@
             <xpath expr="//field[@name='stage_id']" position="before">
                 <button name="create_partner_assignation" string="Create Customer" type="object"
                         help="Create customer from lead's contact" class="oe_highlight"
-                        attrs="{'invisible': ['|',('partner_id', '!=', False),('contact_name', '=', False)]}"/>
+                        attrs="{'invisible': ['|',('partner_id', '!=', False),('partner_name', '=', False)]}"/>
             </xpath>
         </field>
     </record>
