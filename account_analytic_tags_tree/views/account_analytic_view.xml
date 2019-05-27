@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 RGB Consulting SL
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Account move tree view -->
+    <record id="account_move_tree_view_inherit" model="ir.ui.view">
+        <field name="name">account.move.tree.view.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <field name="analytic_account_id" position="after">
+                <field name="analytic_tag_ids"/>
+            </field>
+        </field>
+    </record>
+</odoo>
