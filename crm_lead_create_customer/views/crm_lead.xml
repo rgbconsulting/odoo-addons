@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="crm_case_form_newcustomer_button" model="ir.ui.view">
-        <field name="name">crm_lead_newcustomer.lead_button</field>
+    <record id="crm_case_form_create_customer_button" model="ir.ui.view">
+        <field name="name">crm_lead_create_customer.lead_button</field>
         <field name="model">crm.lead</field>
         <field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
         <field name="arch" type="xml">

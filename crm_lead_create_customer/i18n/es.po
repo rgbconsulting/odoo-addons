@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* crm_leads_newcostumer
+#	* crm_lead_create_customer
 #
 msgid ""
 msgstr ""
@@ -15,18 +15,18 @@ msgstr ""
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: \n"
 
-#. module: crm_leads_newcostumer
-#: model:ir.ui.view,arch_db:crm_leads_newcostumer.crm_case_form_newcustomer_button
+#. module: crm_lead_create_customer
+#: model:ir.ui.view,arch_db:crm_lead_create_customer.crm_case_form_create_customer_button
 msgid "Create Customer"
 msgstr "Crear Cliente"
 
-#. module: crm_leads_newcostumer
-#: model:ir.ui.view,arch_db:crm_leads_newcostumer.crm_case_form_newcustomer_button
+#. module: crm_lead_create_customer
+#: model:ir.ui.view,arch_db:crm_lead_create_customer.crm_case_form_create_customer_button
 msgid "Create customer from lead's contact"
 msgstr "Crea un cliente del contacto de la iniciativa"
 
-#. module: crm_leads_newcostumer
-#: model:ir.model,name:crm_leads_newcostumer.model_crm_lead
+#. module: crm_lead_create_customer
+#: model:ir.model,name:crm_lead_create_customer.model_crm_lead
 msgid "Lead/Opportunity"
 msgstr "Iniciativa/Oportunidad"
 
