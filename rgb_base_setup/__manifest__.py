@@ -17,14 +17,14 @@
                 'mass_editing',
                 'base_technical_features',
                 # server-auth
-                # 17-06-09 optional : 'password_security',
+                # 17-06-09 [optional] : 'password_security',
                 #server-brand
                 'disable_odoo_online',
                 # web
                 'web_dialog_size',
-                'web_searchbar_full_width',
+                # 19-05-29 [optional] : 'web_searchbar_full_width',
                 'web_responsive',
-                #29-4-19 [NOT APROVED]'web_search_with_and',
+                # 19-04-29 [NOT APROVED] : 'web_search_with_and',
                 # partner-contact
                 'base_location_geonames_import',
     ],
