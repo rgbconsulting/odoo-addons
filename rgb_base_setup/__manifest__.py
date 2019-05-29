@@ -32,7 +32,7 @@
                 'base_technical_features',
                 # web
                 'web_dialog_size',
-                'web_searchbar_full_width',
+                # 19-05-29 [optional] : 'web_searchbar_full_width',
                 # 17-06-09 incompatible with responsive : 'web_export_view',
                 'web_hide_db_manager_link',
                 'web_sheet_full_width',
