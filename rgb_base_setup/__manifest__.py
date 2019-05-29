@@ -34,7 +34,7 @@
                 'disable_odoo_online',
                 # web
                 'web_dialog_size',
-                'web_searchbar_full_width',
+                # 19-05-29 [optional] : 'web_searchbar_full_width',
                 'web_sheet_full_width',
                 'web_responsive',
                 'web_no_bubble',
