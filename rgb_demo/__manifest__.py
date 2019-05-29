@@ -11,7 +11,7 @@
     'license': 'AGPL-3',
     'depends': ['rgb_base_setup',
                 'crm',
-                'sale',
+                'sale_management',
                 'project',
                 'hr',
                 'stock',
