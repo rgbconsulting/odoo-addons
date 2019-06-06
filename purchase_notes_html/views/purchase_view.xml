@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 RGB Consulting SL
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Change "Notes" type field for Html -->
+    <record id="purchase_order_form" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[1]/field[@name='notes']" position="replace">
+            </xpath>
+            <xpath expr="//notebook/page[1]/group[@class='oe_subtotal_footer oe_right']" position="replace">
+            </xpath>
+            <xpath expr="//notebook/page[1]/field[@name='order_line']" position="after">
+                <group>
+                    <group class="oe_subtotal_footer oe_right">
+                        <field name="amount_untaxed" widget="monetary"
+                               options="{'currency_field': 'currency_id'}"/>
+                        <field name="amount_tax" widget="monetary"
+                               options="{'currency_field': 'currency_id'}"/>
+                        <div class="oe_subtotal_footer_separator oe_inline">
+                            <label for="amount_total"/>
+                        </div>
+                        <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator"
+                               widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                    </group>
+                    <group>
+                        <field name="notes" nolabel="1"
+                               placeholder="Define your terms and conditions ..." widget="html"/>
+                    </group>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
