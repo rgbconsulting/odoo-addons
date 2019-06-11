@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 RGB Consulting SL
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Account analytic line tree view -->
+    <record id="account_analytic_line_tree_view_inherit" model="ir.ui.view">
+        <field name="name">account.analytic.line.tree.inherit</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_line_tree"/>
+        <field name="arch" type="xml">
+            <field name="account_id" position="after">
+                <field name="analytic_tag"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Account analytic line form view -->
+    <record id="account_analytic_line_form_view_inherit" model="ir.ui.view">
+        <field name="name">account.analytic.line.form.inherit</field>
+        <field name="model">account.analytic.line</field>
+        <field name="inherit_id" ref="analytic.view_account_analytic_line_form"/>
+        <field name="arch" type="xml">
+            <field name="account_id" position="after">
+                <field name="analytic_tag"/>
+            </field>
+        </field>
+    </record>
+</odoo>
