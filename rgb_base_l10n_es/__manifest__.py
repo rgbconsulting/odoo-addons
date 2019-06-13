@@ -29,6 +29,8 @@
                 'l10n_es_account_balance_report',
                 'l10n_es_account_invoice_sequence',
                 'l10n_es_partner_mercantil',
+                'l10n_es_sale_order_report',
+                'l10n_es_account_invoice_report',
                 'l10n_es_account_bank_statement_import_n43'],
     'license': 'AGPL-3',
     'author': "RGB Consulting SL",
