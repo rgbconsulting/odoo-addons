@@ -1,0 +1,32 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* invoice_legal_note
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-30 13:25+0000\n"
+"PO-Revision-Date: 2019-07-30 13:25+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: invoice_legal_note
+#: model:ir.model,name:invoice_legal_note.model_res_company
+msgid "Companies"
+msgstr "Compañías"
+
+#. module: invoice_legal_note
+#: model:ir.model.fields,field_description:invoice_legal_note.field_res_company__legal_note_footer
+msgid "Legal Note Footer"
+msgstr "Pié de nota legal"
+
+#. module: invoice_legal_note
+#: model_terms:ir.ui.view,arch_db:invoice_legal_note.res_company_form_view_inherit
+msgid "Legal note"
+msgstr "Nota legal"
+

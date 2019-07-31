@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Copyright 2019 RGB Consulting SL
+         License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+    <!-- Add legal note in invoices report -->
+    <template id="account_invoice_document_legal_note" inherit_id="account.report_invoice_document">
+        <div class="page" position="inside">
+            <p style="page-break-inside: avoid">
+                <p t-if="o.company_id.legal_note_footer" t-field="o.company_id.legal_note_footer"/>
+            </p>
+        </div>
+    </template>
+</odoo>

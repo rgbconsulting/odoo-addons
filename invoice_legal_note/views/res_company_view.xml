@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Copyright 2019 RGB Consulting SL
+         License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+    <!-- Inherit company form view -->
+    <record id="res_company_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.company.form.inherit</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Legal note">
+                    <field name="legal_note_footer"/>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>
