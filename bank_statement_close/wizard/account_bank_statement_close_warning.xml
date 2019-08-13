@@ -1,0 +1,37 @@
+<odoo>
+        <record id="bank_statement_force_close" model="ir.ui.view">
+            <field name="name">Bank statement force close</field>
+            <field name="model">account.bank_statement_close_warning</field>
+            <field name="arch" type="xml">
+                <form string="Pack invoice">
+                    <h2>
+                        <field name="name" editable="false"/>
+                    </h2>
+                    <group>
+                        <group>
+                            <strong class="oe_highlight">Atention!</strong>
+                            <br/>
+                            <span>You will deactivate <field name="line_count" nolabel="1" class="oe_inline"/> bank statement lines.</span>
+                            <span>Balance ending will be changed to force close, the last balance endign will be saved to bank ending balance.</span>
+                        </group>
+                    </group>
+                    <separator string="Bank Statement Lines"/>
+                    <field name="wizard_lines_ids">
+                        <tree delete="false" create="false" editable="false">
+                            <field name="date"/>
+                            <field name="name"/>
+                            <field name="partner_id"/>
+                            <field name="ref"/>
+                            <field name="amount"/>
+                            <field name="bank_account_id"/>
+                        </tree>
+                    </field>
+                    <footer>
+                        <button name="force_close" type="object" string="Force Close" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+</odoo>

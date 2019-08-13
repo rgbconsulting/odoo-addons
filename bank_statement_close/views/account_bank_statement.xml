@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 RGB Consulting SL
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+    <record model="ir.ui.view" id="view_bank_statement_form_active">
+        <field name="name">payment.order.form.cancel</field>
+        <field name="model">account.bank.statement</field>
+        <field name="inherit_id" ref="account.view_bank_statement_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//header/button[1]" position="after">
+                <button name="button_force_close" states="draft" string="Force Close" type="object" class="oe_highlight"
+                        attrs="{'invisible':[('all_lines_reconciled','=',True)]}"/>
+            </xpath>
+            <xpath expr="//group[1]/group[2]/div[1]" position="after">
+                <label for="balance_end_close"/>
+                <div>
+                    <field class="oe_inline" widget="monetary" name="balance_end_close"/>
+                </div>
+            </xpath>
+            <xpath expr="//group[1]/group[2]/div[3]" position="after">
+                <label for="op_desact"/>
+                <div>
+                    <field class="oe_inline" widget="monetary" name="op_desact"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_bank_statement_tree_active">
+        <field name="name">payment.order.tree.cancel</field>
+        <field name="model">account.bank.statement</field>
+        <field name="inherit_id" ref="account.view_bank_statement_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='balance_start']" position="after">
+                <field name="balance_end_close"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
