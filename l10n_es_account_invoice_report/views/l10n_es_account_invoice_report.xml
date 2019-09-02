@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Change description tax in invoice_line_ids !-->
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document" priority="9999">
+        <xpath expr="//span[contains(@t-esc, 'x.description or x.name')]" position="attributes">
+            <attribute name="t-esc">', '.join(map(lambda x: x.name, l.invoice_line_tax_ids))</attribute>
+        </xpath>
+
+    </template>
+</odoo>
