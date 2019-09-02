@@ -4,6 +4,6 @@
 <odoo>
     <!-- Change the group to an admin's group -->
     <record id="account.menu_finance_legal_statement" model="ir.ui.menu">
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_no_one')])]"/>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_system')])]"/>
     </record>
 </odoo>
