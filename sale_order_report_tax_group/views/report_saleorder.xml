@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_saleorder_document_taxgroup" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//span[contains(@t-esc, 'x.description or x.name')]" position="attributes">
+            <attribute name="t-esc">', '.join(set(map(lambda x: x.tax_group_id.name, line.tax_id)))</attribute>
+        </xpath>
+    </template>
+</odoo>
