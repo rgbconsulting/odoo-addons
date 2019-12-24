@@ -6,7 +6,7 @@ import odoo.addons.decimal_precision as dp
 from odoo.exceptions import Warning
 
 
-class AccountBankStatementLine(models.Model):
+class AccountBankStatement(models.Model):
     _inherit = 'account.bank.statement'
 
     balance_end_close = fields.Monetary(string='Bank Ending Balance', readonly=True)
@@ -30,7 +30,7 @@ class AccountBankStatementLine(models.Model):
             line.active = True
         self.write({'balance_start': self.balance_start})  # Trigger balance_enc calc
         self.oper_desact()
-        return super(AccountBankStatementLine, self).button_draft()
+        return super(AccountBankStatement, self).button_draft()
 
     @api.multi
     def button_force_close(self):
@@ -70,3 +70,10 @@ class AccountBankStatementLine(models.Model):
         self.total_entry_encoding = sum([line.amount for line in self.line_ids.filtered(lambda s: s.active)])
         self.balance_end = self.balance_start + self.total_entry_encoding
         self.difference = self.balance_end_real - self.balance_end
+
+    @api.multi
+    def reconciliation_widget_preprocess(self):
+        res = super(AccountBankStatement, self).reconciliation_widget_preprocess()
+        # Remove inactive lines (not optimal, but the only way without override)
+        res['st_lines_ids'] = self.env['account.bank.statement.line'].search([('id', 'in', res.get('st_lines_ids'))]).ids
+        return res
