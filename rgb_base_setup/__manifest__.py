@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2019 RGB Consulting SL
-		# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     'name': 'RGB Base Setup',
     'summary': 'Default base modules',
@@ -18,16 +18,17 @@
                 'base_technical_features',
                 # server-auth
                 # 17-06-09 [optional] : 'password_security',
-                #server-brand
+                # server-brand
                 'disable_odoo_online',
                 # web
                 'web_dialog_size',
-                # 19-05-29 [optional] : 'web_searchbar_full_width',
+                'web_no_bubble',
+                'web_searchbar_full_width',
                 'web_responsive',
-                # 19-04-29 [NOT APROVED] : 'web_search_with_and',
+                'web_search_with_and',
                 # partner-contact
                 'base_location_geonames_import',
-    ],
+                ],
     'description': """
 RGB Base Setup
 ==============
