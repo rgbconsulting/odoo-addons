@@ -10,22 +10,22 @@
     'author': "RGB Consulting SL",
     'license': 'AGPL-3',
     'depends': [# account-financial-tools
-                    #'account_balance_line',
+                    'account_balance_line',
                     'account_renumber',
-                    #[PR]'account_fiscal_position_vat_check',
+                    'account_fiscal_position_vat_check',
                     'account_move_line_tax_editable',
                     'account_lock_date_update',
                 # account-invoicing
                     'account_invoice_check_total',
                     'account_invoice_refund_link',
                     'account_invoice_tax_required',
-                    #[PR]'account_invoice_supplier_ref_unique',
+                    'account_invoice_supplier_ref_unique',
                     'account_invoice_fiscal_position_update',
                     'account_payment_term_extension',
-                #account-payment
+                # account-payment
                     'account_due_list',
-                #account-financial-reporting
-                    #[PR]'account_financial_report',
+                # account-financial-reporting
+                    'account_financial_report',
                     'account_tax_balance',
     ],
     'description': """
