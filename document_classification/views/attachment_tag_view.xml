@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 RGB Consulting
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="attachment_tag_view_tree" model="ir.ui.view">
+        <field name="name">attachment.tag.view.tree</field>
+        <field name="model">attachment.tag</field>
+        <field name="arch" type="xml">
+            <tree string="Tag Attachments" editable="top">
+                <field name="name"/>
+                <field name="color"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="attachment_tag_view_form" model="ir.ui.view">
+        <field name="name">attachment_tag.view.form</field>
+        <field name="model">attachment.tag</field>
+        <field name="arch" type="xml">
+            <form string="Tag Attachment">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="open_view_attachment_tag_action" model="ir.actions.act_window">
+        <field name="name">Attachment tags</field>
+        <field name="res_model">attachment.tag</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+            id="menu_attachment_tag_main"
+            name="Attachment Tags"
+            parent="base.next_id_9"
+            action="open_view_attachment_tag_action"
+            sequence="13"/>
+</odoo>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 RGB Consulting
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="attachment_category_view_tree" model="ir.ui.view">
+        <field name="name">attachment.category.view.tree</field>
+        <field name="model">attachment.category</field>
+        <field name="arch" type="xml">
+            <tree string="Categories Attachment">
+                <field name="complete_name" string="Name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="attachment_category_view_form" model="ir.ui.view">
+        <field name="name">attachment.category.view.form</field>
+        <field name="model">attachment.category</field>
+        <field name="arch" type="xml">
+            <form string="Categories Attachment">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="parent_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="open_view_attachment_category_action" model="ir.actions.act_window">
+        <field name="name">Attachment categories</field>
+        <field name="res_model">attachment.category</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+            id="menu_attachment_category_main"
+            name="Attachment Categories"
+            parent="base.next_id_9"
+            action="open_view_attachment_category_action"
+            sequence="12"/>
+</odoo>

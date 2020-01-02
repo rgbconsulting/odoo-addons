@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 RGB Consulting
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="ir_attachment_view_search_inherit" model="ir.ui.view">
+        <field name="name">ir.attachment.search.inherit</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="base.view_attachment_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='create_uid']" position="after">
+                <field name="category_id" string="Category" domain="[('category_id', '=', uid)]"/>
+                <field name="tag_ids" string="Tag" domain="[('tag_ids', '=', uid)]"/>
+            </xpath>
+            <xpath expr="//filter[@name='attached_document_name']" position="after">
+                <filter string="Category" name="category_id" domain="[]" context="{'group_by': 'category_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="ir_attachment_view_form" model="ir.ui.view">
+        <field name="name">ir.attachment_form</field>
+        <field name="model">ir.attachment</field>
+        <field name="priority">14</field>
+        <field name="arch" type="xml">
+            <form string="Attachments">
+                <sheet>
+                    <label for="name" class="oe_edit_only"/>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                        <group>
+                            <field name="type"/>
+                            <field name="datas" filename="datas_fname" attrs="{'invisible':[('type','=','url')]}"/>
+                            <field name="datas_fname" invisible="1" attrs="{'invisible':[('type','=','url')]}"
+                                   class="oe_inline oe_right"/>
+                            <field name="url" widget="url" attrs="{'invisible':[('type','=','binary')]}"/>
+                        </group>
+                    </div>
+                    <notebook>
+                        <page string="Properties" name="description_group">
+                            <group>
+                                <field name="category_id"/>
+                                <field name="tag_ids" widget="many2many_tags"
+                                       options="{'color_field': 'color', 'no_create_edit': True}"
+                                       placeholder="Tags..."/>
+                                <field name="description" string="Description"/>
+                            </group>
+                        </page>
+                        <page string="History">
+                            <group>
+                                <field name="create_uid" readonly="1" class="oe_inline" string="Created by"/>
+                                <field name="create_date" readonly="1" class="oe_inline" string="Create date"/>
+                            </group>
+                        </page>
+                        <page string="Technical" groups="base.group_no_one">
+                            <group>
+                                <field name="mimetype"/>
+                                <field name="res_model"/>
+                                <field name="res_field"/>
+                                <field name="res_id"/>
+                                <field name="res_name"/>
+                                <field name="company_id" groups="base.group_multi_company"
+                                       options="{'no_create': True}"/>
+                                <field name="public"/>
+                                <field name="index_content" string="Indexed content"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="ir_attachment_view_kanban_inherit" model="ir.ui.view">
+        <field name="name">ir.attachment.kanban.inherit</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="mail.view_document_file_kanban"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('o_kanban_record_title')]" position="after">
+                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="ir_attachment_view_tree_inherit" model="ir.ui.view">
+        <field name="name">ir.attachment.tree.inherit</field>
+        <field name="model">ir.attachment</field>
+        <field name="inherit_id" ref="base.view_attachment_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='res_model']" position="attributes">
+                <attribute name="groups">base.group_no_one</attribute>
+            </xpath>
+            <xpath expr="//field[@name='res_field']" position="attributes">
+                <attribute name="groups">base.group_no_one</attribute>
+            </xpath>
+            <xpath expr="//field[@name='res_id']" position="attributes">
+                <attribute name="groups">base.group_no_one</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>

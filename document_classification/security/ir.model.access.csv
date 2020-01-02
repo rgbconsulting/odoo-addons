@@ -1,0 +1,7 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"access_ir_attachment_category_all","ir_attachment_category","model_attachment_category",,1,0,0,0
+"access_ir_attachment_category_group_user","ir_attachment_category group_user","model_attachment_category","base.group_user",1,1,1,1
+"access_ir_attachment_category_portal","ir.attachment_category portal","model_attachment_category","base.group_portal",1,0,0,0
+"access_ir_attachment_tag_all","ir_attachment_tag all","model_attachment_tag",,1,0,0,0
+"access_ir_attachment_tag_group_user","ir_attachment_tag group_user","model_attachment_tag","base.group_user",1,1,1,1
+"access_ir_attachment_tag_portal","ir.attachment_tag portal","model_attachment_tag","base.group_portal",1,0,0,0
