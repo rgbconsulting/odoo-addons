@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 RGB Consulting SL
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="hr_my_attendance_view_tree" model="ir.ui.view">
+        <field name="name">hr.my.attendance.tree</field>
+        <field name="model">hr.attendance</field>
+        <field eval="150" name="priority"/>
+        <field name="arch" type="xml">
+            <tree decoration-danger="error_attendances == True" string="Hr My Attendance" create="false" edit="false">
+                <field name="employee_id"/>
+                <field name="error_attendances" invisible="1"/>
+                <field name="check_in"/>
+                <field name="check_out"/>
+                <field name="worked_hours" widget="float_time"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="hr_my_attendance_view_form" model="ir.ui.view">
+        <field name="name">hr.my.attendance.form</field>
+        <field name="model">hr.attendance</field>
+        <field eval="150" name="priority"/>
+        <field name="arch" type="xml">
+            <form string="Hr My Attendance" create="false" edit="false">
+                <group string="Attendance">
+                    <field name="employee_id"/>
+                    <field name="error_attendances" invisible="1"/>
+                    <field name="check_in"/>
+                    <field name="check_out"/>
+                    <field name="worked_hours" widget="float_time"/>
+                    <field name="notification_note"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="hr_attendance_action" model="ir.actions.act_window">
+        <field name="name">Attendance</field>
+        <field name="res_model">hr.attendance</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('employee_id.user_id', '=', uid)]</field>
+        <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('hr_my_attendance_view_tree')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('hr_my_attendance_view_form')})]"/>
+    </record>
+
+    <menuitem id="menu_hr_my_attendances"
+              name="My Attendances"
+              parent="hr_attendance.menu_hr_attendance_root"
+              sequence="11"
+              action="hr_attendance_action"/>
+</odoo>

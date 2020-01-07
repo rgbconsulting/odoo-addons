@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 RGB Consulting SL
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="hr_attendance_tree_view_inherited" model="ir.ui.view">
+        <field name="name">hr.attendance.tree.inherited</field>
+        <field name="model">hr.attendance</field>
+        <field eval="15" name="priority"/>
+        <field name="inherit_id" ref="hr_attendance.view_attendance_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="decoration-danger">error_attendances == True</attribute>
+            </xpath>
+            <field name="employee_id" position="after">
+                <field name="error_attendances" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="hr_attendance_form_view_inherited" model="ir.ui.view">
+        <field name="name">hr.attendance.form.inherited</field>
+        <field name="model">hr.attendance</field>
+        <field name="inherit_id" ref="hr_attendance.hr_attendance_view_form"/>
+        <field name="arch" type="xml">
+            <field name="employee_id" position="after">
+                <field name="error_attendances" invisible="1"/>
+            </field>
+            <xpath expr="//sheet" position="inside">
+                <group string="Notification note">
+                    <field name="notification_note"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>
