@@ -23,9 +23,7 @@
                 # web
                 'web_dialog_size',
                 'web_no_bubble',
-                'web_searchbar_full_width',
                 'web_responsive',
-                'web_search_with_and',
                 # partner-contact
                 'base_location_geonames_import',
                 ],
