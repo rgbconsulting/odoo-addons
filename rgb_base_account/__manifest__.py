@@ -27,6 +27,8 @@
                 # account-financial-reporting
                     'account_financial_report',
                     'account_tax_balance',
+                # mis-builder
+                    'mis_builder',
     ],
     'description': """
 RGB Base Accounting
