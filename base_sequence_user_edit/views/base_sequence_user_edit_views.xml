@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 RGB Consulting
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Add Published checkbox in all sequences-->
+    <record id="sequence_view_inherited" model="ir.ui.view">
+        <field name="name">base_sequence_user_edit.ir_sequence.view_inherit</field>
+        <field name="model">ir.sequence</field>
+        <field name="inherit_id" ref="base.sequence_view"/>
+        <field name="arch" type="xml">
+            <field name="active" position="after">
+                <field name="published"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Add Sequences Menu to be accessible from Invoicing Menu -->
+    <menuitem id="menu_finance_sequences" name="Sequence Modifications"
+              parent="account.menu_finance_configuration" sequence="1"
+              action="base.ir_sequence_form" groups="group_base_sequence_user_edit"/>
+</odoo>
