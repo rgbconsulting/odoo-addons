@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_ir_sequence,access_ir_sequence,model_ir_sequence,base_sequence_user_edit.group_base_sequence_user_edit,1,1,0,0
+access_ir_sequence_usr,ir_sequence_usr,model_ir_sequence,base_sequence_user_edit.group_base_sequence_user_edit,1,1,0,0
+access_ir_sequence_admin_mng,ir_sequence_admin_mng,model_ir_sequence,base.group_erp_manager,1,1,1,1

@@ -14,6 +14,18 @@
         </field>
     </record>
 
+    <!-- Add "Is Published" filter only for Admin/Mng -->
+    <record id="base_sequence_search_view" model="ir.ui.view">
+        <field name="name">base.sequence.search</field>
+        <field name="model">ir.sequence</field>
+        <field name="arch" type="xml">
+            <search>
+                <filter string="Is Published" name="published" groups="base.group_erp_manager"
+                        domain="[('published', '=', True)]"/>
+            </search>
+        </field>
+    </record>
+
     <!-- Add Sequences Menu to be accessible from Invoicing Menu -->
     <menuitem id="menu_finance_sequences" name="Sequence Modifications"
               parent="account.menu_finance_configuration" sequence="1"
