@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-16 12:06+0000\n"
-"PO-Revision-Date: 2020-01-16 12:06+0000\n"
+"POT-Creation-Date: 2020-01-30 14:56+0000\n"
+"PO-Revision-Date: 2020-01-30 14:56+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,57 +16,22 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: base_sequence_user_edit
-#: model:ir.model.fields,field_description:base_sequence_user_edit.field_base_sequence_create_uid
-msgid "Created by"
-msgstr "Creat per"
+#: model_terms:ir.ui.view,arch_db:base_sequence_user_edit.base_sequence_search_view
+msgid "Is Published"
+msgstr "Está publicat"
 
 #. module: base_sequence_user_edit
-#: model:ir.model.fields,field_description:base_sequence_user_edit.field_base_sequence_create_date
-msgid "Created on"
-msgstr "Creat el"
-
-#. module: base_sequence_user_edit
-#: model:ir.model.fields,field_description:base_sequence_user_edit.field_base_sequence_display_name
-msgid "Display Name"
-msgstr "Mostrar Nom"
-
-#. module: base_sequence_user_edit
-#: model:ir.model.fields,field_description:base_sequence_user_edit.field_base_sequence_id
-msgid "ID"
-msgstr "ID"
-
-#. module: base_sequence_user_edit
-#: model:ir.model.fields,field_description:base_sequence_user_edit.field_base_sequence___last_update
-msgid "Last Modified on"
-msgstr "Última modificació el"
-
-#. module: base_sequence_user_edit
-#: model:ir.model.fields,field_description:base_sequence_user_edit.field_base_sequence_write_uid
-msgid "Last Updated by"
-msgstr "Última actualització per"
-
-#. module: base_sequence_user_edit
-#: model:ir.model.fields,field_description:base_sequence_user_edit.field_base_sequence_write_date
-msgid "Last Updated on"
-msgstr "Última actualització el"
-
-#. module: base_sequence_user_edit
-#: model:ir.model.fields,field_description:base_sequence_user_edit.field_ir_sequence_published
+#: model:ir.model.fields,field_description:base_sequence_user_edit.field_ir_sequence__published
 msgid "Published"
 msgstr "Publicat"
+
+#. module: base_sequence_user_edit
+#: model:ir.model,name:base_sequence_user_edit.model_ir_sequence
+msgid "Sequence"
+msgstr "Seqüència"
 
 #. module: base_sequence_user_edit
 #: model:ir.ui.menu,name:base_sequence_user_edit.menu_finance_sequences
 #: model:res.groups,name:base_sequence_user_edit.group_base_sequence_user_edit
 msgid "Sequence Modifications"
 msgstr "Modificacions de Seqüència"
-
-#. module: base_sequence_user_edit
-#: model:ir.model,name:base_sequence_user_edit.model_base_sequence
-msgid "base.sequence"
-msgstr "base.sequence"
-
-#. module: base_sequence_user_edit
-#: model:ir.model,name:base_sequence_user_edit.model_ir_sequence
-msgid "ir.sequence"
-msgstr "ir.sequence"
