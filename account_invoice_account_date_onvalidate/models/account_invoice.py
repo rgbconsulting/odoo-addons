@@ -12,4 +12,4 @@ class AccountInvoice(models.Model):
         """ Creates invoice related analytics and financial move lines """
         self.filtered(lambda s: not s.date and s.type in ('in_invoice', 'in_refund')).write(
             {'date': fields.Date.context_today(self)})
-        super(AccountInvoice, self).action_move_create()
+        return super(AccountInvoice, self).action_move_create()
