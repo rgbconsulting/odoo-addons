@@ -33,7 +33,6 @@
                 # account-invoicing
                 'account_invoice_check_total',
                 'account_invoice_refund_link',
-                'account_group_invoice_line',
                 'account_invoice_supplier_ref_unique',
                 'account_invoice_fiscal_position_update',
                 'account_payment_term_extension',
