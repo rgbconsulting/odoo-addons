@@ -24,6 +24,7 @@
                 'web_dialog_size',
                 'web_no_bubble',
                 'web_responsive',
+                'web_widget_many2many_tags_multi_selection',
                 # partner-contact
                 'base_location_geonames_import',
                 ],
