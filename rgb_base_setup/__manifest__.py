@@ -39,6 +39,7 @@
                 'web_responsive',
                 'web_no_bubble',
                 'web_search_with_and',
+		'web_widget_many2many_tags_multi_selection',
                 # partner-contact
                 'base_location_geonames_import',
                 ],
