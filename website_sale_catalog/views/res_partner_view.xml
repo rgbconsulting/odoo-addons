@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2020 RGB Consulting
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Add catalog_id's field in partner's form view -->
+    <record id="res_partner_view_form_inherit" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name="ref" position="after">
+                <field name="catalog_id" widget="selection" groups="website_sale_catalog.catalog_manager"
+                       attrs="{'invisible': ['|', ('parent_id', '!=', False), ('customer', '=', False)]}"/>
+            </field>
+        </field>
+    </record>
+</odoo>

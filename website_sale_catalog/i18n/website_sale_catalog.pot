@@ -1,0 +1,149 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* website_sale_catalog
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 10.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-10-22 07:44+0000\n"
+"PO-Revision-Date: 2019-10-22 07:44+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: website_sale_catalog
+#: model:ir.model.fields,field_description:website_sale_catalog.field_res_partner_catalog_id
+#: model:ir.model.fields,field_description:website_sale_catalog.field_res_users_catalog_id
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_catalog_id
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_config_settings_catalog_id
+#: model:ir.ui.view,arch_db:website_sale_catalog.website_catalog_view_tree
+msgid "Catalog"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:res.groups,name:website_sale_catalog.catalog_manager
+msgid "Catalog Administration"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.ui.view,arch_db:website_sale_catalog.website_catalog_view_form
+msgid "Catalog name"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.actions.act_window,name:website_sale_catalog.website_catalog_template_action
+#: model:ir.model.fields,field_description:website_sale_catalog.field_delivery_carrier_catalog_ids
+#: model:ir.model.fields,field_description:website_sale_catalog.field_product_product_catalog_ids
+#: model:ir.model.fields,field_description:website_sale_catalog.field_product_template_catalog_ids
+#: model:ir.ui.menu,name:website_sale_catalog.menu_catalog_products
+#: model:ir.ui.view,arch_db:website_sale_catalog.product_template_view_form
+msgid "Catalogs"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_catalog_category_ids
+msgid "Categories"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.ui.view,arch_db:website_sale_catalog.website_catalog_view_form
+msgid "Categories..."
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_catalog_create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_catalog_create_date
+msgid "Created on"
+msgstr ""
+
+#. module: website_sale_catalog
+#: code:addons/website_sale_catalog/models/website_catalog.py:39
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_catalog_partner_ids
+#: model:ir.ui.view,arch_db:website_sale_catalog.website_catalog_view_form
+#, python-format
+msgid "Customers"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_catalog_customers_count
+msgid "Customers count"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_catalog_description
+msgid "Description"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_catalog_display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_catalog_id_10646
+msgid "ID"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_catalog___last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_catalog_write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_catalog_write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_catalog_name
+msgid "Name"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model,name:website_sale_catalog.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model,name:website_sale_catalog.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model.fields,field_description:website_sale_catalog.field_website_catalog_product_ids
+msgid "Products"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.ui.view,arch_db:website_sale_catalog.website_catalog_view_form
+msgid "Products..."
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model,name:website_sale_catalog.model_website
+msgid "Website"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model,name:website_sale_catalog.model_website_catalog
+msgid "website.catalog"
+msgstr ""
+
+#. module: website_sale_catalog
+#: model:ir.model,name:website_sale_catalog.model_website_config_settings
+msgid "website.config.settings"
+msgstr ""
+

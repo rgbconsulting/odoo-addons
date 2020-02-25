@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2020 RGB Consulting
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <!-- Catalog form view -->
+    <record id="website_catalog_view_form" model="ir.ui.view">
+        <field name="name">website.catalog.form</field>
+        <field name="model">website.catalog</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button class="oe_stat_button" name="action_view_customers" type="object"
+                                attrs="{'readonly':[('partner_ids','=',[])]}" icon="fa-users">
+                            <field name="customers_count" string="Customers" widget="statinfo"/>
+                            <field name="partner_ids" invisible="1"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <div name="button_box" position="after">
+                            <label for="name" string="Catalog name" class="oe_edit_only"/>
+                        </div>
+                        <h2>
+                            <field name="name"/>
+                        </h2>
+                    </div>
+                    <group>
+                        <field name="product_ids" widget="many2many_tags" placeholder="Products..."
+                               domain="[('sale_ok', '=', True)]" options="{'no_create_edit': True}"/>
+                    </group>
+                    <group>
+                        <field name="category_ids" widget="many2many_tags" placeholder="Categories..."
+                               options="{'no_create_edit': True}"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Catalog tree view -->
+    <record id="website_catalog_view_tree" model="ir.ui.view">
+        <field name="name">website.catalog.tree</field>
+        <field name="model">website.catalog</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Catalog">
+                <field name="name"/>
+                <field name="description"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Catalog action and menu -->
+    <record id="website_catalog_template_action" model="ir.actions.act_window">
+        <field name="name">Catalogs</field>
+        <field name="res_model">website.catalog</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_published': 1, 'default_website_published': True}</field>
+    </record>
+
+    <menuitem id="menu_catalog_products"
+              name="Catalogs"
+              parent="website_sale.menu_catalog"
+              action="website_catalog_template_action"
+              groups="catalog_manager"
+              sequence="4"/>
+</odoo>
