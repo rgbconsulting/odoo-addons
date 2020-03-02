@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2020 RGB Consulting
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <template id="portal_my_task_inherit" inherit_id="project.portal_my_task">
+        <xpath expr="//span[@t-field='task.id']" position="attributes">
+            <attribute name="t-field">task.code</attribute>
+        </xpath>
+    </template>
+
+    <template id="portal_my_tasks_inherit" inherit_id="project.portal_my_tasks">
+        <xpath expr="//span[@t-esc='task.id']" position="attributes">
+            <attribute name="t-esc">task.code</attribute>
+        </xpath>
+    </template>
+</odoo>
+
