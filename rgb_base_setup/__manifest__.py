@@ -13,6 +13,7 @@
                 'note',
                 'calendar',
                 'document',
+                'auth_password_policy',
                 # server-ux
                 'mass_editing',
                 'base_technical_features',
