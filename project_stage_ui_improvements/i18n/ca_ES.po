@@ -1,0 +1,70 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* project_stage_ui_improvements
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-16 13:50+0000\n"
+"PO-Revision-Date: 2020-06-16 13:50+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: project_stage_ui_improvements
+#: model_terms:ir.ui.view,arch_db:project_stage_ui_improvements.project_task_type_view_form_inherit
+msgid "Add a description..."
+msgstr "Afegir una descripció..."
+
+#. module: project_stage_ui_improvements
+#: model_terms:ir.ui.view,arch_db:project_stage_ui_improvements.project_task_type_view_form_inherit
+msgid "At each stage employees can block or make task/issue ready for next stage.\n"
+"                                You can define here labels that will be displayed for the state instead\n"
+"                                of the default labels."
+msgstr "A cada etapa el treballador pot bloquejar o deixar la tasca/incidència llesta per la següent etapa.\n"
+"Pots definir aquí les etiquetes que es mostraran per l'estat en lloc de les etiquetes predeterminades."
+
+#. module: project_stage_ui_improvements
+#: model_terms:ir.ui.view,arch_db:project_stage_ui_improvements.project_task_type_view_form_inherit
+msgid "Description"
+msgstr "Descripció"
+
+#. module: project_stage_ui_improvements
+#: model_terms:ir.ui.view,arch_db:project_stage_ui_improvements.project_task_type_view_form_inherit
+msgid "Legend priority"
+msgstr "Prioritat de llegenda"
+
+#. module: project_stage_ui_improvements
+#: model_terms:ir.ui.view,arch_db:project_stage_ui_improvements.project_task_type_view_form_inherit
+msgid "Projects"
+msgstr "Projectes"
+
+#. module: project_stage_ui_improvements
+#: model_terms:ir.ui.view,arch_db:project_stage_ui_improvements.project_task_type_view_form_inherit
+msgid "Task in progress. Click to block or set as done."
+msgstr "Tasca en curs. Faci click per bloquejar o marcar com fet."
+
+#. module: project_stage_ui_improvements
+#: model_terms:ir.ui.view,arch_db:project_stage_ui_improvements.project_task_type_view_form_inherit
+msgid "Task is blocked. Click to unblock or set as done."
+msgstr "Tasca bloquejada. Faci click per desbloquejar o configurar com fet."
+
+#. module: project_stage_ui_improvements
+#: model_terms:ir.ui.view,arch_db:project_stage_ui_improvements.project_task_type_view_form_inherit
+msgid "This step is done. Click to block or set in progress."
+msgstr "Aquest pas està fet. Faci click per bloquejar o ficar en progrés."
+
+#. module: project_stage_ui_improvements
+#: model_terms:ir.ui.view,arch_db:project_stage_ui_improvements.project_task_type_view_form_inherit
+msgid "You can also add a description to help your coworkers understand the meaning and purpose of the stage."
+msgstr "Pot inclús afegir una descripció per ajudar als companys de feina a entendre el significat i el propòsit d'aquesta etapa."
+
+#. module: project_stage_ui_improvements
+#: model_terms:ir.ui.view,arch_db:project_stage_ui_improvements.project_task_type_view_form_inherit
+msgid "You can also give a tooltip about the use of the stars available in the kanban and form views."
+msgstr "Pot inclús donar una ajuda sobre l'ús de les estrelles utilitzades al kanban i a la vista formulari."
+
