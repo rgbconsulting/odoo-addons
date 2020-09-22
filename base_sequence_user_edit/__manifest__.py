@@ -22,4 +22,5 @@ This module implements new sequence submenu for base users.
         'security/ir.model.access.csv',
         'views/base_sequence_user_edit_views.xml',
     ],
+    'installable': False,
 }
