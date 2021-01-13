@@ -18,7 +18,6 @@
                 'point_of_sale',
                 'mrp',
                 'fleet',
-                # 'hr_timesheet_sheet',
                 'hr_holidays',
                 'hr_expense'
     ],
