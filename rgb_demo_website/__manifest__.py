@@ -17,7 +17,6 @@
                 'website_blog',
                 'website_forum',
                 'website_event',
-                # 'website_hr', DEL
                 'website_hr_recruitment',
                 ],
     'description': """
