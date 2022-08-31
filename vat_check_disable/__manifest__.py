@@ -4,7 +4,7 @@
 {
     'name': 'Disable VAT Check',
     'summary': 'Disable VAT validation for company',
-    'version': '12.0.1.0.0',
+    'version': '12.0.1.0.1',
     'category': 'base',
     'website': "https://www.rgbconsulting.com",
     'author': "RGB Consulting SL",

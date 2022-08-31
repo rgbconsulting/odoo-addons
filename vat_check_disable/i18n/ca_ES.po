@@ -4,10 +4,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 10.0\n"
+"Project-Id-Version: Odoo Server 12.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-01-25 08:06+0000\n"
-"PO-Revision-Date: 2018-01-25 08:06+0000\n"
+"POT-Creation-Date: 2022-08-31 10:24+0000\n"
+"PO-Revision-Date: 2022-08-31 10:24+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,21 +18,24 @@ msgstr ""
 #. module: vat_check_disable
 #: model:ir.model,name:vat_check_disable.model_res_company
 msgid "Companies"
-msgstr "Companyies"
-
-#. module: vat_check_disable
-#: model:ir.model.fields,field_description:vat_check_disable.field_res_company_disable_vat_check
-msgid "Disable VAT Check"
-msgstr "Desactivar comprobació NIF"
+msgstr ""
 
 #. module: vat_check_disable
 #: model:ir.model,name:vat_check_disable.model_res_partner
-msgid "Partner"
-msgstr "Empresa"
+msgid "Contact"
+msgstr ""
 
 #. module: vat_check_disable
-#: model:ir.model.fields,field_description:vat_check_disable.field_res_partner_vat_validation_fail
-#: model:ir.model.fields,field_description:vat_check_disable.field_res_users_vat_validation_fail
+#: model:ir.model.fields,field_description:vat_check_disable.field_res_company__disable_vat_check
+msgid "Disable VAT Check"
+msgstr "Deshabilitar bloqueig validació CIF/NIF"
+
+#. module: vat_check_disable
+#: model:ir.model.fields,field_description:vat_check_disable.field_prestashop_address__vat_validation_fail
+#: model:ir.model.fields,field_description:vat_check_disable.field_prestashop_res_partner__vat_validation_fail
+#: model:ir.model.fields,field_description:vat_check_disable.field_prestashop_supplier__vat_validation_fail
+#: model:ir.model.fields,field_description:vat_check_disable.field_res_partner__vat_validation_fail
+#: model:ir.model.fields,field_description:vat_check_disable.field_res_users__vat_validation_fail
 msgid "VAT Validation Fail"
-msgstr "Validació NIF fallida"
+msgstr "Validació de CIF/NIF fallida"
 

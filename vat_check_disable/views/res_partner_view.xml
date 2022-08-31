@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--Copyright 2019 RGB Consulting SL
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).-->
 <odoo>
     <record id="partner_vat_disable_form_view" model="ir.ui.view">
         <field name="name">res.partner.vat.disable.form</field>
@@ -6,7 +8,7 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='vat']" position="after">
-                    <field name="vat_validation_fail"/>
+                <field name="vat_validation_fail"/>
             </xpath>
         </field>
     </record>
