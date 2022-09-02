@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-# Copyright 2019 RGB Consulting SL
+# Copyright 2022 RGB Consulting SL
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     'name': 'Auth User Passkey',
     'summary': 'Allow login with any user using another user password',
-    'version': '12.0.1.0.0',
+    'version': '13.0.1.0.0',
     'category': 'base',
     'website': 'https://www.rgbconsulting.com',
-    'author': 'RGB Consulting SL',
+    'author': 'RGB Informàtica i Consulting SL',
     'license': 'AGPL-3',
     'depends': ['base'],
     'description': """
