@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
     'name': "Mail activity subcribe",
-    'version': '12.1.1.0.0',
+    'version': '12.1.1.1.0',
     'depends': ['mail'],
     'license': 'AGPL-3',
     'author': "RGB Consulting SL",
