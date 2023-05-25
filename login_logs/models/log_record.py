@@ -100,5 +100,5 @@ class LogRecord(models.Model):
                     "message": t_message,
                 }
                 self.env['log.record'].create(vals)
-            except:
-                _logger.error("Error getting Login log: %s", log_line)
+            except Exception as e:
+                _logger.error("Error getting Login log: %s", e)
