@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Auth user parameter -->
+        <record id="journal_process_uid_parameter" model="ir.config_parameter">
+            <field name="key">journal_process_uid</field>
+            <field name="value"/>
+        </record>
+    </data>
+</odoo>
