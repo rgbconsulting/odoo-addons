@@ -87,7 +87,7 @@ class LogRecord(models.Model):
                 t_message = re.split(m_split_pattern, t_full_message)[0].strip()
                 t_full_message = re.split(m_split_pattern, t_full_message)[1]
                 t_user = t_full_message.split()[0].strip()
-                t_source = t_full_message.split()[2].strip()
+                t_source = t_full_message.split()[2].replace('\'', '').strip()
 
                 vals = {
                     "date_registration": t_datetime,
