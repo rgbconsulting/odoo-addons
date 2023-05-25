@@ -54,12 +54,11 @@ class LogRecord(models.Model):
 
         p_journal = subprocess.Popen(["journalctl", "--since", date_since_str, "--no-pager", "-u", process_uid],
                                      stdout=subprocess.PIPE)
-        if p_journal:
-            p_grep = subprocess.Popen(["grep", ": Login"], stdin=p_journal.stdout, stdout=subprocess.PIPE)
-            login_logs_all = p_grep.stdout.read()
-            p_grep.stdout.close()
-            p_journal.stdout.close()
-            log_lines = login_logs_all.splitlines()
+        p_grep = subprocess.Popen(["grep", ": Login"], stdin=p_journal.stdout, stdout=subprocess.PIPE)
+        login_logs_all = p_grep.stdout.read()
+        p_grep.stdout.close()
+        p_journal.stdout.close()
+        log_lines = login_logs_all.splitlines()
 
         # TEST: Load data from file with only login logs lines
         #log_lines = []
@@ -68,7 +67,7 @@ class LogRecord(models.Model):
 
         for log_line in log_lines:
             try:
-                src_line = log_line.split(']:', 1)[1].strip()
+                src_line = str(log_line).split(']:', 1)[1].strip()
                 t_date = re.split(dt1_pattern, src_line)[1]
                 t_datetime = datetime.strptime(t_date, '%Y-%m-%d %H:%M:%S,%f')
                 # Exclude those that have already been imported
