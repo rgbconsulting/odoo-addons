@@ -32,9 +32,22 @@
                 <field name="database_name"/>
                 <field name="model_name"/>
                 <field name="login_user"/>
-                <field name="login_source_addr"/>
                 <field name="message"/>
             </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="login_logs_rule_filters_view_search" >
+        <field name="model">log.record</field>
+        <field name="arch" type="xml">
+            <search string="Filters">
+                <group expand="0" string="Group By">
+                    <filter string="Date" name="date_registration" domain="[]" context="{'group_by':'date_registration'}"/>
+                    <filter string="User" name="login_user" domain="[]" context="{'group_by':'login_user'}"/>
+                </group>
+                <field name="date_registration"/>
+                <field name="login_user"/>
+            </search>
         </field>
     </record>
 
