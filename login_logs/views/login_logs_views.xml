@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="login_logs_rule_form_view">
+        <field name="name">log.record.form</field>
+        <field name="model">log.record</field>
+        <field name="arch" type="xml">
+            <form string="Login Log" create="false" edit="false" delete="false">
+                <header />
+                <sheet>
+                    <group string="Login Log">
+                        <field name="date_registration"/>
+                        <field name="process_id"/>
+                        <field name="level"/>
+                        <field name="database_name"/>
+                        <field name="model_name"/>
+                        <field name="login_user"/>
+                        <field name="login_source_addr"/>
+                        <field name="message"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="login_logs_rule_filters_view_search" >
+        <field name="model">log.record</field>
+        <field name="arch" type="xml">
+            <search string="Filters">
+                <group expand="0" string="Group By">
+                    <filter string="Date" name="date_registration" domain="[]" context="{'group_by':'date_registration'}"/>
+                    <filter string="User" name="login_user" domain="[]" context="{'group_by':'login_user'}"/>
+                </group>
+                <field name="date_registration"/>
+                <field name="login_user"/>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="login_logs_rule_tree_view">
+        <field name="name">log.record.tree</field>
+        <field name="model">log.record</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" delete="false">
+                <field name="date_registration" />
+                <field name="level" />
+                <field name="database_name"/>
+                <field name="model_name"/>
+                <field name="login_user"/>
+                <field name="message"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="login_logs_rule_tree_action">
+        <field name="name">Login Logs</field>
+        <field name="res_model">log.record</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="login_logs_rule_tree_view" />
+    </record>
+
+    <menuitem id="menu_app_logs"
+              name="Logs"
+              parent="base.menu_custom"
+              sequence="50"
+              groups="base.group_system"
+    />
+
+    <menuitem id="menu_login_logs"
+              name="Login Logs"
+              parent="menu_app_logs"
+              action="login_logs_rule_tree_action"/>
+</odoo>
