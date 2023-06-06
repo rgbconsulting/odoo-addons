@@ -40,7 +40,7 @@
         <field name="name">log.record.tree</field>
         <field name="model">log.record</field>
         <field name="arch" type="xml">
-            <tree create="false" edit="false" delete="false">
+            <tree>
                 <field name="date_registration" />
                 <field name="level" />
                 <field name="database_name"/>

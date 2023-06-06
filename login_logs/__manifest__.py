@@ -4,7 +4,7 @@
 {
     'name': "Login logs",
     'version': '0.1',
-    'category': 'Tools',
+    'category': 'Tools/Login logs',
     'summary': """
         Gets de journalctl login logs for the current instance
         """,
@@ -19,6 +19,7 @@
     """,
 
     'data': [
+        'security/security.xml',
         'security/ir.model.access.csv',
         "data/ir_cron.xml",
         'views/login_logs_views.xml',
