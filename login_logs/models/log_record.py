@@ -19,14 +19,14 @@ class LogRecord(models.Model):
 
     # %(asctime)s %(pid)s %(levelname)s %(dbname)s %(name)s: %(message)s
     # fecha_hora, id_proceso, nivel o tipo, nombre_bd, nombre(modelo), mensaje
-    date_registration = fields.Datetime(string='Date', default=lambda self: fields.Datetime.now(), readonly=True)
-    process_id = fields.Integer(string='Process', default=0, readonly=True)
-    level = fields.Char(string='Level', readonly=True)
-    database_name = fields.Char(string='Database', readonly=True)
-    model_name = fields.Char(string='Model Name', readonly=True)
-    login_user = fields.Char(string='User', readonly=True)
-    login_source_addr = fields.Char(string='Source', readonly=True)
-    message = fields.Char(string='Message', readonly=True)
+    date_registration = fields.Datetime(string='Date', default=lambda self: fields.Datetime.now(), readonly=False)
+    process_id = fields.Integer(string='Process', default=0, readonly=False)
+    level = fields.Char(string='Level', readonly=False)
+    database_name = fields.Char(string='Database', readonly=False)
+    model_name = fields.Char(string='Model Name', readonly=False)
+    login_user = fields.Char(string='User', readonly=False)
+    login_source_addr = fields.Char(string='Source', readonly=False)
+    message = fields.Char(string='Message', readonly=False)
 
     @api.model
     def get_journalctl_login_logs(self):

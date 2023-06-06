@@ -22,21 +22,6 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="login_logs_rule_tree_view">
-        <field name="name">log.record.tree</field>
-        <field name="model">log.record</field>
-        <field name="arch" type="xml">
-            <tree create="false" edit="false" delete="false">
-                <field name="date_registration" />
-                <field name="level" />
-                <field name="database_name"/>
-                <field name="model_name"/>
-                <field name="login_user"/>
-                <field name="message"/>
-            </tree>
-        </field>
-    </record>
-
     <record model="ir.ui.view" id="login_logs_rule_filters_view_search" >
         <field name="model">log.record</field>
         <field name="arch" type="xml">
@@ -48,6 +33,21 @@
                 <field name="date_registration"/>
                 <field name="login_user"/>
             </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="login_logs_rule_tree_view">
+        <field name="name">log.record.tree</field>
+        <field name="model">log.record</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date_registration" />
+                <field name="level" />
+                <field name="database_name"/>
+                <field name="model_name"/>
+                <field name="login_user"/>
+                <field name="message"/>
+            </tree>
         </field>
     </record>
 
