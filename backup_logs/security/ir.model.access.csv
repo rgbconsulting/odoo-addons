@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+backup_logs.access_backup_log_type,access_backup_log_type,backup_logs.model_backup_log_type,base.group_user,1,0,0,0
+backup_logs.access_backup_log_type_admin,access_backup_log_type_admin,backup_logs.model_backup_log_type,group_backup_logs_admin,1,1,1,1
+backup_logs.access_backup_log_record,access_backup_log_record,backup_logs.model_backup_log_record,base.group_user,1,1,0,0
+backup_logs.access_backup_log_record_admin,access_backup_log_record_admin,backup_logs.model_backup_log_record,group_backup_logs_admin,1,1,1,1
