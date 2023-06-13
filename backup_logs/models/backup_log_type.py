@@ -44,7 +44,7 @@ class BackupLogType(models.Model):
             'type': 'ir.actions.act_window',
             'name': _('Backup Logs'),
             'res_model': 'backup.log.record',
-            'view_type': 'tree,form',
+            'view_type': 'tree',
             'view_mode': 'tree',
             'domain': [('log_type_id', '=', self.id)],
             'view_id': self.env.ref('backup_logs.backup_log_record_tree_view').id,

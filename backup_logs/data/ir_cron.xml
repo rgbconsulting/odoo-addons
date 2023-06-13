@@ -9,6 +9,6 @@
         <field name="doall" eval="False" />
         <field name="code">model.update_backup_logs()</field>
         <field name="state">code</field>
-        <field name="model_id" ref="model_backup_log_type" />
+        <field name="model_id" ref="model_backup_log_record" />
     </record>
 </odoo>
