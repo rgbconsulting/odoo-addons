@@ -74,6 +74,7 @@ class BackupLogRecord(models.Model):
         p_grep = subprocess.Popen(["grep", "db-odoo-backup"], stdin=p_journal.stdout, stdout=subprocess.PIPE)
         backup_logs_all = p_grep.stdout.read()
         if not backup_logs_all:
+            p_journal = subprocess.Popen(["cat", "/var/log/syslog"], stdout=subprocess.PIPE)
             p_grep = subprocess.Popen(["grep", "lite-db-backup"], stdin=p_journal.stdout, stdout=subprocess.PIPE)
             backup_logs_all = p_grep.stdout.read()
         p_grep.stdout.close()
@@ -87,6 +88,8 @@ class BackupLogRecord(models.Model):
                 t_datetime = datetime.strptime('{0} {1} {2} {3}'.format(datetime.now().year, t_date_array[0], t_date_array[1], t_date_array[2]), '%Y %b %d %H:%M:%S')
                 # Exclude those that have already been imported
                 if t_datetime <= last_datetime:
+                    continue
+                if 'prod-' not in src_line:
                     continue
                 src_line_splited_array = src_line.split(']:', 1)[1].strip().split(' ')
                 exec_file = src_line_splited_array[4]
@@ -136,12 +139,12 @@ class BackupLogRecord(models.Model):
         date_since_str = (last_datetime + relativedelta(hours=-2)).strftime('%Y-%m-%d %H:%M')
         log_lines = []
 
-        p_journal = subprocess.Popen(["cat", "/var/log/syslog"],
-                                     stdout=subprocess.PIPE)
+        p_journal = subprocess.Popen(["cat", "/var/log/syslog"], stdout=subprocess.PIPE)
         p_grep = subprocess.Popen(["grep", "site-odoo-backup"], stdin=p_journal.stdout, stdout=subprocess.PIPE)
         backup_logs_all = p_grep.stdout.read()
         if not backup_logs_all:
-            p_grep = subprocess.Popen(["grep", "site-backup-"], stdin=p_journal.stdout, stdout=subprocess.PIPE)
+            p_journal = subprocess.Popen(["cat", "/var/log/syslog"], stdout=subprocess.PIPE)
+            p_grep = subprocess.Popen(["grep", "site-backup"], stdin=p_journal.stdout, stdout=subprocess.PIPE)
             backup_logs_all = p_grep.stdout.read()
         p_grep.stdout.close()
         p_journal.stdout.close()
@@ -156,6 +159,8 @@ class BackupLogRecord(models.Model):
                     '%Y %b %d %H:%M:%S')
                 # Exclude those that have already been imported
                 if t_datetime <= last_datetime:
+                    continue
+                if 'prod-' not in src_line:
                     continue
                 src_line_splited_array = src_line.split(']:', 1)[1].strip().split(' ')
                 exec_file = src_line_splited_array[4]
