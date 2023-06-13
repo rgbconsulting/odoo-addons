@@ -4,10 +4,10 @@
         <field name="name">backup.log.type.form</field>
         <field name="model">backup.log.type</field>
         <field name="arch" type="xml">
-            <form string="Backup Log Type">
+            <form string="Backup">
                 <header />
                 <sheet>
-                    <group string="Backup Log">
+                    <group string="Backup">
                         <field name="type_name"/>
                         <field name="log_type"/>
                         <field name="output_dest"/>
@@ -39,7 +39,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="backup_logs_type_tree_action">
-        <field name="name">Backup Logs Types</field>
+        <field name="name">Backups</field>
         <field name="res_model">backup.log.type</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="backup_logs_type_tree_view" />
@@ -53,7 +53,7 @@
     />
 
     <menuitem id="menu_backup_type_logs"
-              name="Backup Log Types"
+              name="Backups"
               parent="menu_app_logs"
               action="backup_logs_type_tree_action"/>
 </odoo>
