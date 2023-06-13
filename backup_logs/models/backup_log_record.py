@@ -58,7 +58,8 @@ class BackupLogRecord(models.Model):
 
         type_baas = os.path.exists('/home/baas')
         current_db = self.env.cr.dbname
-        last_record = self.env['backup.log.record'].search([('log_type_id', '=', db_backup_type.id)], order="id desc", limit=1)
+        last_record = self.env['backup.log.record'].search([('log_type_id', '=', db_backup_type.id)], order="id desc",
+                                                           limit=1)
         if last_record:
             last_datetime = last_record.date_registration
         else:
@@ -69,22 +70,25 @@ class BackupLogRecord(models.Model):
         date_since_str = (last_datetime + relativedelta(hours=-2)).strftime('%Y-%m-%d %H:%M')
         log_lines = []
 
-        p_journal = subprocess.Popen(["cat", "/var/log/syslog"],
-                                     stdout=subprocess.PIPE)
-        p_grep = subprocess.Popen(["grep", "/home/baas/bin/lite-db-backup"], stdin=p_journal.stdout, stdout=subprocess.PIPE)
+        p_journal = subprocess.Popen(["cat", "/var/log/syslog"], stdout=subprocess.PIPE)
+        p_grep = subprocess.Popen(["grep", "db-odoo-backup"], stdin=p_journal.stdout, stdout=subprocess.PIPE)
         backup_logs_all = p_grep.stdout.read()
+        if not backup_logs_all:
+            p_grep = subprocess.Popen(["grep", "lite-db-backup"], stdin=p_journal.stdout, stdout=subprocess.PIPE)
+            backup_logs_all = p_grep.stdout.read()
         p_grep.stdout.close()
         p_journal.stdout.close()
         log_lines = backup_logs_all.splitlines()
 
         for log_line in log_lines:
             try:
-                t_date_array = str(log_line).split(']:', 1)[0].strip().split(' ')
+                src_line = log_line.decode('ascii')
+                t_date_array = src_line.split(']:', 1)[0].strip().split(' ')
                 t_datetime = datetime.strptime('{0} {1} {2} {3}'.format(datetime.now().year, t_date_array[0], t_date_array[1], t_date_array[2]), '%Y %b %d %H:%M:%S')
                 # Exclude those that have already been imported
                 if t_datetime <= last_datetime:
                     continue
-                src_line_splited_array = str(log_line).split(']:', 1)[1].strip().split(' ')
+                src_line_splited_array = src_line.split(']:', 1)[1].strip().split(' ')
                 exec_file = src_line_splited_array[4]
                 if exec_file:
                     instance_backup_dirs = os.listdir('/mnt/extra-storage/backup/odoo/')
@@ -99,7 +103,7 @@ class BackupLogRecord(models.Model):
                     with os.scandir(bkp_base_path) as bkp_files:
                         for bkp_file in bkp_files:
                             if bkp_file.is_file():
-                                if bkp_file.name.startswith('db-') and bkp_file.name.find(joined_time_str) != -1:
+                                if bkp_file.name.startswith('db-') and (joined_time_str in bkp_file.name):
                                     bfile_size = bkp_file.stat().st_size
                                     vals = {
                                         "date_registration": t_datetime,
@@ -121,8 +125,7 @@ class BackupLogRecord(models.Model):
 
         type_baas = os.path.exists('/home/baas')
         current_db = self.env.cr.dbname
-        last_record = self.env['backup.log.record'].search([('log_type_id', '=', site_backup_type.id)], order="id desc",
-                                                           limit=1)
+        last_record = self.env['backup.log.record'].search([('log_type_id', '=', site_backup_type.id)], order="id desc", limit=1)
         if last_record:
             last_datetime = last_record.date_registration
         else:
@@ -135,20 +138,26 @@ class BackupLogRecord(models.Model):
 
         p_journal = subprocess.Popen(["cat", "/var/log/syslog"],
                                      stdout=subprocess.PIPE)
-        p_grep = subprocess.Popen(["grep", "/home/baas/bin/site-backup"], stdin=p_journal.stdout, stdout=subprocess.PIPE)
+        p_grep = subprocess.Popen(["grep", "site-odoo-backup"], stdin=p_journal.stdout, stdout=subprocess.PIPE)
         backup_logs_all = p_grep.stdout.read()
+        if not backup_logs_all:
+            p_grep = subprocess.Popen(["grep", "site-backup-"], stdin=p_journal.stdout, stdout=subprocess.PIPE)
+            backup_logs_all = p_grep.stdout.read()
         p_grep.stdout.close()
         p_journal.stdout.close()
         log_lines = backup_logs_all.splitlines()
 
         for log_line in log_lines:
             try:
-                t_date_array = str(log_line).split(']:', 1)[0].strip().split(' ')
-                t_datetime = datetime.strptime('{0} {1} {2} {3}'.format(datetime.now().year, t_date_array[0], t_date_array[1], t_date_array[2]), '%Y %b %d %H:%M:%S')
+                src_line = log_line.decode('ascii')
+                t_date_array = src_line.split(']:', 1)[0].strip().split(' ')
+                t_datetime = datetime.strptime(
+                    '{0} {1} {2} {3}'.format(datetime.now().year, t_date_array[0], t_date_array[1], t_date_array[2]),
+                    '%Y %b %d %H:%M:%S')
                 # Exclude those that have already been imported
                 if t_datetime <= last_datetime:
                     continue
-                src_line_splited_array = str(log_line).split(']:', 1)[1].strip().split(' ')
+                src_line_splited_array = src_line.split(']:', 1)[1].strip().split(' ')
                 exec_file = src_line_splited_array[4]
                 if exec_file:
                     instance_backup_dirs = os.listdir('/mnt/extra-storage/backup/odoo/')
@@ -163,7 +172,8 @@ class BackupLogRecord(models.Model):
                     with os.scandir(bkp_base_path) as bkp_files:
                         for bkp_file in bkp_files:
                             if bkp_file.is_file():
-                                if fnmatch.fnmatch(bkp_file.name, '*-site-*') and bkp_file.name.find(joined_time_str) != -1:
+                                if (fnmatch.fnmatch(bkp_file.name, '*-site-*') or fnmatch.fnmatch(bkp_file.name, 'site-*')) \
+                                        and (joined_time_str in bkp_file.name):
                                     bfile_size = bkp_file.stat().st_size
                                     vals = {
                                         "date_registration": t_datetime,
