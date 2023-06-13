@@ -3,10 +3,6 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0)
 
 from odoo import SUPERUSER_ID, models, fields, api, _
-from datetime import datetime
-from dateutil.relativedelta import relativedelta
-import subprocess
-import re
 import logging
 
 _logger = logging.getLogger(__name__)
