@@ -85,7 +85,9 @@ class BackupLogRecord(models.Model):
             try:
                 src_line = log_line.decode('ascii')
                 t_date_array = src_line.split(']:', 1)[0].strip().split(' ')
-                t_datetime = datetime.strptime('{0} {1} {2} {3}'.format(datetime.now().year, t_date_array[0], t_date_array[1], t_date_array[2]), '%Y %b %d %H:%M:%S')
+                t_datetime = datetime.strptime(
+                    '{0} {1} {2} {3}'.format(datetime.now().year, t_date_array[0], t_date_array[1], t_date_array[2]),
+                    '%Y %b %d %H:%M:%S')
                 # Exclude those that have already been imported
                 if t_datetime <= last_datetime:
                     continue
@@ -106,6 +108,12 @@ class BackupLogRecord(models.Model):
                     with os.scandir(bkp_base_path) as bkp_files:
                         for bkp_file in bkp_files:
                             if bkp_file.is_file():
+                                t_old_style_dt_file_part_str = datetime.strftime(t_datetime, '%Y-%m-%d_%H-%M-%S')
+                                t_dt_file_part_str = datetime.strftime(t_datetime, '%Y%m%d_%H%M%S')
+                                # Valida que el fichero corresponda con el log por la hora
+                                if (t_old_style_dt_file_part_str not in bkp_file.name) and \
+                                        (t_dt_file_part_str not in bkp_file.name):
+                                    continue
                                 if bkp_file.name.startswith('db-') and (joined_time_str in bkp_file.name):
                                     bfile_size = bkp_file.stat().st_size
                                     vals = {
@@ -128,7 +136,8 @@ class BackupLogRecord(models.Model):
 
         type_baas = os.path.exists('/home/baas')
         current_db = self.env.cr.dbname
-        last_record = self.env['backup.log.record'].search([('log_type_id', '=', site_backup_type.id)], order="id desc", limit=1)
+        last_record = self.env['backup.log.record'].search([('log_type_id', '=', site_backup_type.id)], order="id desc",
+                                                           limit=1)
         if last_record:
             last_datetime = last_record.date_registration
         else:
@@ -177,6 +186,12 @@ class BackupLogRecord(models.Model):
                     with os.scandir(bkp_base_path) as bkp_files:
                         for bkp_file in bkp_files:
                             if bkp_file.is_file():
+                                t_old_style_dt_file_part_str = datetime.strftime(t_datetime, '%Y-%m-%d_%H-%M-%S')
+                                t_dt_file_part_str = datetime.strftime(t_datetime, '%Y%m%d_%H%M%S')
+                                # Valida que el fichero corresponda con el log por la hora
+                                if (t_old_style_dt_file_part_str not in bkp_file.name) and \
+                                        (t_dt_file_part_str not in bkp_file.name):
+                                    continue
                                 if bkp_file.name.startswith('odoo-') \
                                         or ((fnmatch.fnmatch(bkp_file.name, '*-site-*')
                                              or fnmatch.fnmatch(bkp_file.name, 'site-*'))
