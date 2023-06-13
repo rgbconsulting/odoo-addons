@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="backup_logs_type_form_view">
+        <field name="name">backup.log.type.form</field>
+        <field name="model">backup.log.type</field>
+        <field name="arch" type="xml">
+            <form string="Backup Log Type">
+                <header />
+                <sheet>
+                    <group string="Backup Log">
+                        <field name="type_name"/>
+                        <field name="log_type"/>
+                        <field name="output_dest"/>
+                        <field name="directory"/>
+                        <field name="exec_interval_number"/>
+                        <field name="exec_interval_unit"/>
+                        <field name="available_disk"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="backup_logs_type_tree_view">
+        <field name="name">backup.log.type.tree</field>
+        <field name="model">backup.log.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="type_name" />
+                <field name="log_type" />
+                <field name="output_dest"/>
+                <field name="directory"/>
+                <field name="exec_interval_number"/>
+                <field name="exec_interval_unit"/>
+                <field name="available_disk"/>
+                <button type="object" name="open_logs_tree_view" string="View Logs" icon="fa-list"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="backup_logs_type_tree_action">
+        <field name="name">Backup Logs Types</field>
+        <field name="res_model">backup.log.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="backup_logs_type_tree_view" />
+    </record>
+
+    <menuitem id="menu_app_logs"
+              name="Backup Logs"
+              parent="base.menu_custom"
+              sequence="50"
+              groups="base.group_system"
+    />
+
+    <menuitem id="menu_backup_type_logs"
+              name="Backup Log Types"
+              parent="menu_app_logs"
+              action="backup_logs_type_tree_action"/>
+</odoo>
