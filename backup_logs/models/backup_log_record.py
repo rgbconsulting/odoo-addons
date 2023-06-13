@@ -177,8 +177,10 @@ class BackupLogRecord(models.Model):
                     with os.scandir(bkp_base_path) as bkp_files:
                         for bkp_file in bkp_files:
                             if bkp_file.is_file():
-                                if (fnmatch.fnmatch(bkp_file.name, '*-site-*') or fnmatch.fnmatch(bkp_file.name, 'site-*')) \
-                                        and (joined_time_str in bkp_file.name):
+                                if bkp_file.name.startswith('odoo-') \
+                                        or ((fnmatch.fnmatch(bkp_file.name, '*-site-*')
+                                             or fnmatch.fnmatch(bkp_file.name, 'site-*'))
+                                            and (joined_time_str in bkp_file.name)):
                                     bfile_size = bkp_file.stat().st_size
                                     vals = {
                                         "date_registration": t_datetime,
