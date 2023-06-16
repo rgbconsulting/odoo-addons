@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="backup_log_record_form_view">
+        <field name="name">backup.log.record.form</field>
+        <field name="model">backup.log.record</field>
+        <field name="arch" type="xml">
+            <form string="Backup Log">
+                <header />
+                <sheet>
+                    <group string="Backup Log">
+                        <field name="date_registration"/>
+                        <field name="file_name"/>
+                        <field name="file_size"/>
+                        <field name="message"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="backup_log_record_tree_view">
+        <field name="name">backup.log.record.tree</field>
+        <field name="model">backup.log.record</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date_registration"/>
+                <field name="file_name"/>
+                <field name="file_size"/>
+                <field name="message"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="backup_log_record_tree_action">
+        <field name="name">Backup Logs</field>
+        <field name="res_model">backup.log.record</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="backup_log_record_tree_view" />
+    </record>
+</odoo>
