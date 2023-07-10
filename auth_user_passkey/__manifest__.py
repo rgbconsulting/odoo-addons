@@ -4,7 +4,7 @@
 {
     'name': 'Auth User Passkey',
     'summary': 'Allow login with any user using another user password',
-    'version': '1.0',
+    'version': '1.0.0',
     'category': 'base',
     'website': 'https://www.rgbconsulting.com',
     'author': 'RGB Informàtica i Consulting SL',
