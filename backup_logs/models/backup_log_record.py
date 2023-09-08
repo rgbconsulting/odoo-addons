@@ -84,7 +84,7 @@ class BackupLogRecord(models.Model):
         for log_line in log_lines:
             try:
                 src_line = log_line.decode('ascii')
-                t_date_array = src_line.split(']:', 1)[0].strip().split(' ')
+                t_date_array = src_line.split(']:', 1)[0].strip().split()
                 t_datetime = datetime.strptime(
                     '{0} {1} {2} {3}'.format(datetime.now().year, t_date_array[0], t_date_array[1], t_date_array[2]),
                     '%Y %b %d %H:%M:%S')
@@ -93,7 +93,7 @@ class BackupLogRecord(models.Model):
                     continue
                 if 'prod-' not in src_line:
                     continue
-                src_line_splited_array = src_line.split(']:', 1)[1].strip().split(' ')
+                src_line_splited_array = src_line.split(']:', 1)[1].strip().split()
                 exec_file = src_line_splited_array[4]
                 if exec_file:
                     instance_backup_dirs = os.listdir('/mnt/extra-storage/backup/odoo/')
@@ -162,7 +162,7 @@ class BackupLogRecord(models.Model):
         for log_line in log_lines:
             try:
                 src_line = log_line.decode('ascii')
-                t_date_array = src_line.split(']:', 1)[0].strip().split(' ')
+                t_date_array = src_line.split(']:', 1)[0].strip().split()
                 t_datetime = datetime.strptime(
                     '{0} {1} {2} {3}'.format(datetime.now().year, t_date_array[0], t_date_array[1], t_date_array[2]),
                     '%Y %b %d %H:%M:%S')
@@ -171,7 +171,7 @@ class BackupLogRecord(models.Model):
                     continue
                 if 'prod-' not in src_line:
                     continue
-                src_line_splited_array = src_line.split(']:', 1)[1].strip().split(' ')
+                src_line_splited_array = src_line.split(']:', 1)[1].strip().split()
                 exec_file = src_line_splited_array[4]
                 if exec_file:
                     instance_backup_dirs = os.listdir('/mnt/extra-storage/backup/odoo/')
