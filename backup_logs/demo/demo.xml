@@ -1,10 +1,22 @@
 <odoo>
-    <data>
-<!--
-          <record id="object0" model="backup_logs.backup_logs">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
-          </record>
--->
+    <data noupdate="1">
+        <record id="backup_log_type" model="backup.log.type">
+            <field name="type_name">Database Backup</field>
+            <field name='log_type'>db</field>
+            <field name='output_dest'>baas</field>
+            <field name="directory">/mnt/extra-storage/backup/odoo/client/prod-01</field>
+            <field name='exec_interval_number'>8</field>
+            <field name='exec_interval_unit'>hours</field>
+            <field name='available_disk'>50GB</field>
+        </record>
+        <record id="backup_log_type" model="backup.log.type">
+            <field name="type_name">Site Backup</field>
+            <field name='log_type'>site</field>
+            <field name='output_dest'>baas</field>
+            <field name="directory">/mnt/extra-storage/backup/odoo/client/prod-01</field>
+            <field name='exec_interval_number'>1</field>
+            <field name='exec_interval_unit'>days</field>
+            <field name='available_disk'>50GB</field>
+        </record>
     </data>
 </odoo>
