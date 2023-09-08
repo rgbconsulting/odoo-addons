@@ -19,4 +19,5 @@
             <field name='available_disk'>50GB</field>
         </record>
     </data>
+
 </odoo>
