@@ -16,7 +16,7 @@ class BackupLogType(models.Model):
     log_type = fields.Selection(
         [('db', 'DB'), ('site', 'SITE')],
         string="Type",
-        default="disk",
+        default="db",
         help="Define where the backup is sent.\nDISK - Local disk\nBAAS - BaaS servers")
     output_dest = fields.Selection(
         [('disk', 'DISK'), ('baas', 'BAAS')],

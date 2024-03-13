@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl-3.0)
 {
     'name': "Backup logs",
-    'version': '1.0.0',
+    'version': '1.0.1',
     'category': 'Tools',
     'summary': """
         Gets backup logs for the current instance

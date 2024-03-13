@@ -1,6 +1,6 @@
 <odoo>
     <data noupdate="1">
-        <record id="backup_log_type" model="backup.log.type">
+        <record id="backup_log_type_db" model="backup.log.type">
             <field name="type_name">Database Backup</field>
             <field name='log_type'>db</field>
             <field name='output_dest'>baas</field>
@@ -9,7 +9,7 @@
             <field name='exec_interval_unit'>hours</field>
             <field name='available_disk'>50GB</field>
         </record>
-        <record id="backup_log_type" model="backup.log.type">
+        <record id="backup_log_type_site" model="backup.log.type">
             <field name="type_name">Site Backup</field>
             <field name='log_type'>site</field>
             <field name='output_dest'>baas</field>
